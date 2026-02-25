@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BLACK RUSSIA — Панель доступа</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-anim"></div>
+
+<!-- ПРИВЕТСТВЕННОЕ МЕНЮ -->
+
+<div id="welcomeScreen" class="welcome-screen">
+  <div class="welcome-box">
+ <div class="logo">BLACK RUSSIA</div>
+
+    <p class="welcome-text">
+      Упрощённый доступ к подаче заявки на получение административного статуса.
+      <br><br>
+      Авторизация осуществляется через защищённую систему проверки.
+    </p>
+
+    <button class="main-btn" onclick="openAuth()">
+      ПЕРЕЙТИ К АВТОРИЗАЦИИ
+    </button>
+  </div>
+</div>
+
+<!-- АВТОРИЗАЦИЯ -->
+
+<div id="authContainer" class="auth-container" style="display:none;">
+
+  <div class="logo">BLACK RUSSIA</div>
+
+  <div class="tabs">
+    <button id="loginTab" class="active">Вход</button>
+    <button id="registerTab">Регистрация</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="loginForm" class="form">
+    <input id="loginNick" placeholder="Игровой ник">
+    <input id="loginPass" type="password" placeholder="Пароль">
+
+    <button class="main-btn" onclick="login()">ВОЙТИ</button>
+
+    <!-- ПРОГРЕСС ПРОВЕРКИ -->
+    <div class="progress-wrapper" id="loginProgressWrap">
+      <div class="progress-bar">
+        <div id="loginProgress"></div>
+      </div>
+      <div id="loginStatusText" class="progress-text"></div>
+    </div>
+
+    <div id="loginError" class="error"></div>
+  </div>
+
+  <!-- REGISTER -->
+  <div id="registerForm" class="form" style="display:none;">
+    <input id="regNick" placeholder="Игровой ник">
+    <input id="regPass" type="password" placeholder="Пароль от аккаунта">
+
+    <div class="custom-select" id="serverSelect">
+  <div class="select-selected">Выберите сервер</div>
+  <div class="select-options" id="serverOptions"></div>
+  <input type="hidden" id="regServer">
+</div>
+
+    <!-- ОТДЕЛЬНЫЕ СОВРЕМЕННЫЕ БЛОКИ -->
+    <div class="info-cards">
+      <div class="info-card secure">
+        <div class="info-title">Конфиденциальность</div>
+        <div class="info-text">
+          Передаваемые данные защищены и не передаются третьим лицам.
+        </div>
+      </div>
+
+      <div class="info-card level">
+        <div class="info-title">Требование</div>
+        <div class="info-text">
+          Минимальный уровень персонажа: <b>5 LVL</b>
+        </div>
+      </div>
+    </div>
+
+    <button class="main-btn" onclick="register()">ОТПРАВИТЬ ЗАЯВКУ</button>
+    <div id="regMsg" class="success"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
